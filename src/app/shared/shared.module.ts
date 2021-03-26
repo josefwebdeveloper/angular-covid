@@ -20,6 +20,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatSnackBarModule,
     MatSlideToggleModule,
     MatDividerModule,
+    MatTableModule
 
   ],
   declarations: [],
@@ -68,6 +70,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatSliderModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule
   ]
 })
 export class SharedModule {

@@ -25,6 +25,8 @@
       <span>Covid-19</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "large" color = "#fff" type = "square-jelly-box"
+    [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,12 +14,15 @@ import { MatListModule } from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MainModule} from './featured/main/main.module';
 import { MainTopComponent } from './featured/main/main-top/main-top.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import { CountryTableComponent } from './shared/components/country-table/country-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    MainTopComponent
+
   ],
   imports: [
     BrowserModule,
@@ -32,8 +35,10 @@ import { MainTopComponent } from './featured/main/main-top/main-top.component';
     MatIconModule,
     MatListModule,
     BrowserAnimationsModule,
-    MainModule,
+    HttpClientModule,
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
