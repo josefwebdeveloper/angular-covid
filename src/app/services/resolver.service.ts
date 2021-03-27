@@ -22,9 +22,7 @@ export class Resolver implements Resolve<any> {
   }
 
   async resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    this.spinner.show();
     return this.apiService.getCountryData().toPromise().then(res => {
-      this.spinner.hide();
       return res;
     })
       .catch((e) => {

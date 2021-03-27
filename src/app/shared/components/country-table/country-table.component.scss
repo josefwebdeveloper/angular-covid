@@ -1,0 +1,29 @@
+.main-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.mat-header-cell, td.mat-cell {
+  text-align: center;
+  border: 1px solid #CCC;
+  padding: 0 5px !important;
+}
+td {
+  text-align: center;
+  border: 1px solid #CCC;
+  vertical-align: middle;
+  padding: 0 5px;
+}
+th{
+  vertical-align: middle;
+}
+@media screen and (max-width: 700px) {
+  .main-container {
+    padding: 0;
+    display: flex;
+    overflow-y: scroll;
+  }
+
+}
+
+

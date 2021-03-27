@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PreloadModulesStrategy} from './services/preload-modules.strategy';
-import {Resolver} from './services/resolver-tree.service';
+import {Resolver} from './services/resolver.service';
 
 
 const routes: Routes = [

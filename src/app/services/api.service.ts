@@ -15,4 +15,7 @@ export class ApiService {
   getCountryData(): Observable<any> {
     return this.http.get(this.baseUrl + 'covid/us/current');
   }
+  getStatesData(): Observable<any> {
+    return this.http.get(this.baseUrl + 'covid/states/current');
+  }
 }
