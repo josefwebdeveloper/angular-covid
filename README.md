@@ -1,4 +1,6 @@
 # CovidAngular
+Project Console: https://console.firebase.google.com/project/covid-19-angular/overview
+Hosting URL: https://covid-19-angular.web.app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
