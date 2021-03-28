@@ -6,7 +6,7 @@ import {Resolver} from './services/resolver.service';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/covid' },
-  // { path: 'customers/:id', data: { preload: true }, loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
+  // { path: 'customers/:id', loadChildren: () => import('./featured/main/main.module').then(m => m.MainModule) },
   { path: 'covid', resolve: {countryData: Resolver}, loadChildren: () => import('./featured/main/main.module').then(m => m.MainModule) },
   // { path: 'orders', data: { preload: true }, loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
   // { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },

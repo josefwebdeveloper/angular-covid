@@ -1,0 +1,101 @@
+<div class="main-container">
+  <div (click)="navigateToState()" class="state-title">
+    {{stateData.state}}
+  </div>
+  <div class="table-section">
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="firstCol">
+        <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}">Cases</th>
+        <td *matCellDef="let row"> {{row.positive}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Cases">
+        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"><span> Cases </span></th>
+        <td mat-cell [ngStyle]="{'display': 'none'}" *matCellDef="let row"> {{row.positive}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="negative">
+        <th mat-header-cell *matHeaderCellDef><span> Negative </span>
+        </th>
+        <td mat-cell *matCellDef="let row"> {{row.negative}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Pending">
+        <th mat-header-cell *matHeaderCellDef><span> Pending </span></th>
+        <td *matCellDef="let row"> {{row.pending}} </td>
+      </ng-container>
+      <ng-container matColumnDef="CurrentlyHosp">
+        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="1"><span> Currently </span></th>
+        <td *matCellDef="let row"> {{row.hospitalizedCurrently}} </td>
+      </ng-container>
+      <ng-container matColumnDef="CumulativeHosp">
+        <th mat-header-cell *matHeaderCellDef><span> Cumulative </span></th>
+        <td *matCellDef="let row"> {{row.hospitalizedCumulative}} </td>
+      </ng-container>
+      <ng-container matColumnDef="CurrentlyICU">
+        <th mat-header-cell *matHeaderCellDef><span> Currently </span></th>
+        <td *matCellDef="let row"> {{row.inIcuCurrently}} </td>
+      </ng-container>
+      <ng-container matColumnDef="CumulativeICU">
+        <th mat-header-cell *matHeaderCellDef><span> Cumulative </span></th>
+        <td *matCellDef="let row"> {{row.inIcuCumulative}} </td>
+      </ng-container>
+      <ng-container matColumnDef="CurrentlyVent">
+        <th mat-header-cell *matHeaderCellDef><span> Currently </span></th>
+        <td *matCellDef="let row"> {{row.onVentilatorCurrently}} </td>
+      </ng-container>
+      <ng-container matColumnDef="CumulativeVent">
+        <th mat-header-cell *matHeaderCellDef><span> Cumulative </span></th>
+        <td *matCellDef="let row"> {{row.onVentilatorCumulative}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Recovered">
+        <th mat-header-cell *matHeaderCellDef><span> Recovered </span></th>
+        <td *matCellDef="let row"> {{row.recovered}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Deaths">
+        <th mat-header-cell *matHeaderCellDef><span> Deaths </span></th>
+        <td *matCellDef="let row"> {{row.death}} </td>
+      </ng-container>
+      <ng-container matColumnDef="PositiveNegative">
+        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="1">
+          <div>Positive + Negative</div>
+        </th>
+        <td *matCellDef="let row"> {{row.total}} </td>
+      </ng-container>
+      <!--    ------------------------------------->
+      <!--first Row-->
+      <ng-container matColumnDef="Tests">
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> Tests</th>
+      </ng-container>
+      <ng-container matColumnDef="Hospitalized">
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> Hospitalized*</th>
+      </ng-container>
+      <ng-container matColumnDef="Icu">
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> In ICU</th>
+      </ng-container>
+      <ng-container matColumnDef="Ventilator">
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> On Ventilator</th>
+      </ng-container>
+      <ng-container matColumnDef="Outcomes">
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> Outcomes</th>
+      </ng-container>
+      <ng-container matColumnDef="TotalTestResults">
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="1"> Total Test Results</th>
+      </ng-container>
+      <tr mat-header-row
+          *matHeaderRowDef="['Cases', 'Tests','Hospitalized','Icu','Ventilator','Outcomes','TotalTestResults']"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </mat-table>
+  </div>
+  <div class="footer">
+    <div class="first-description">
+      State’s dataset was last updated {{stateData.dateChecked}}
+    </div>
+    <div (click)="scrollToTop()" class="back-to-top">
+      Back to top
+    </div>
+  </div>
+</div>

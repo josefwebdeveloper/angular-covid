@@ -1,2 +1,5 @@
-<div class="title">Data for {{getDate()}}</div>
+<div class="title">Data for {{getDate(null)}}</div>
 <app-country-table [countryData]="countryData"></app-country-table>
+<div *ngFor="let state of statesData"  class="states-container">
+  <app-state-table [stateData]="state"></app-state-table>
+</div>

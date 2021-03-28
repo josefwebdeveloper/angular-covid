@@ -5,13 +5,17 @@ import {CountryTableComponent} from '../../shared/components/country-table/count
 import {MainTopComponent} from './main-top/main-top.component';
 import {SharedModule} from '../../shared/shared.module';
 import {MatSortModule} from '@angular/material/sort';
+import {StateTableComponent} from '../../shared/components/state-table/state-table.component';
+import { StateComponent } from './state/state.component';
 
 
 
 @NgModule({
   declarations: [
     CountryTableComponent,
-    MainTopComponent
+    MainTopComponent,
+    StateTableComponent,
+    StateComponent
   ],
   imports: [
     CommonModule,

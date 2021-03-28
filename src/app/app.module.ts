@@ -12,11 +12,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MainModule} from './featured/main/main.module';
-import { MainTopComponent } from './featured/main/main-top/main-top.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxSpinnerModule} from 'ngx-spinner';
-import { CountryTableComponent } from './shared/components/country-table/country-table.component';
 
 @NgModule({
   declarations: [
