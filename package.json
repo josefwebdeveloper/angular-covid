@@ -5,7 +5,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build-prod": "ng build --prod --aot",
-    "build": "ng build --prod --baseHref='https://josefwebdeveloper.github.io/angular-covid/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
