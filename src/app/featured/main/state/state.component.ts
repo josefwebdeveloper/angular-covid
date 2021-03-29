@@ -1,12 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {switchMap} from 'rxjs/operators';
 import {ResponceCurrentState} from '../../../models/responce-current-state';
-import {Subscription} from 'rxjs';
-import {DataService} from '../../../services/data.service';
+import { Subscription} from 'rxjs';
 import {UsStates} from '../../../shared/data.us.states';
 import {ApiService} from '../../../services/api.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {StateInfo} from '../../../models/states-info';
 
 @Component({
   selector: 'app-state',
@@ -17,6 +16,8 @@ export class StateComponent implements OnInit, OnDestroy {
   stateData: ResponceCurrentState;
   statesData: ResponceCurrentState[];
   private routeSub: Subscription;
+  stateSub: Subscription;
+  stateInfo: StateInfo;
 
   constructor(private route: ActivatedRoute,
               private spinner: NgxSpinnerService,
@@ -28,12 +29,15 @@ export class StateComponent implements OnInit, OnDestroy {
       if (params) {
         console.log(params); //log the entire params object
         console.log(params['id']); //log the value of id
-        this.getStatesData(params['id']);
-        this.getStatesDaily();
+        this.getStateData(params['id']);
       }
     });
   }
 
+  getStateData(selectedId): void {
+    this.getStatesData(selectedId);
+    this.getStateInfo(selectedId);
+  }
 
   getStatesData(selectedId): void {
     this.spinner.show();
@@ -56,17 +60,27 @@ export class StateComponent implements OnInit, OnDestroy {
     });
   }
 
-  getStatesDaily(): void {
+  getStateInfo(selectedId): void {
     // this.spinner.show();
-    this.apiService.getStatesData().toPromise().then(res => {
+    this.apiService.getStatesInfo().toPromise().then(res => {
       // this.spinner.hide();
       if (res) {
         console.log(res);
+        let statesInfo = res.data.response;
+        statesInfo = statesInfo.map(state => {
+          state.state = UsStates.find(el => (el.abbreviation === state.state)).name;
+          return state;
+        });
+        this.stateInfo = statesInfo.find(st => st.state === selectedId);
+
+        console.log(this.stateInfo);
+
       }
     }).catch((e) => {
       console.error(e);
     });
   }
+
 
   getDate(inputData): any {
     const data = new Date(inputData);

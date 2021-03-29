@@ -7,6 +7,7 @@ import {SharedModule} from '../../shared/shared.module';
 import {MatSortModule} from '@angular/material/sort';
 import {StateTableComponent} from '../../shared/components/state-table/state-table.component';
 import { StateComponent } from './state/state.component';
+import {FilterPipe} from '../../pipes/filter.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { StateComponent } from './state/state.component';
     CountryTableComponent,
     MainTopComponent,
     StateTableComponent,
-    StateComponent
+    StateComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,

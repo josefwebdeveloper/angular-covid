@@ -14,11 +14,13 @@ import { MatListModule } from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+    FooterComponent,
 
   ],
   imports: [

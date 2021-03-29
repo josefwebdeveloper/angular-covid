@@ -16,7 +16,7 @@ import {DataService} from '../../../services/data.service';
 export class MainTopComponent implements OnInit {
   countryData: CountryCurrentResponce;
   statesData: ResponceCurrentState[];
-
+  value = '';
   constructor(private apiService: ApiService,
               private spinner: NgxSpinnerService,
               private route: ActivatedRoute,

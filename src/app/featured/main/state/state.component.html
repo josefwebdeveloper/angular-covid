@@ -1,1 +1,11 @@
-<app-state-table  *ngIf="stateData" [stateData]="stateData"></app-state-table>
+<div class="main-container">
+  <app-state-table *ngIf="stateData" [stateData]="stateData"></app-state-table>
+  <div *ngIf="stateInfo" class="footer">
+    <div class="news">
+      {{stateInfo.notes}}
+    </div>
+    <div class="link" >
+      <span class="text-link">Link To State Site: </span> <a class="site-info" href="{{stateInfo.covid19Site}}">{{stateInfo.covid19Site}}</a>
+    </div>
+  </div>
+</div>

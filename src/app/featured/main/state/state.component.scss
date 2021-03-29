@@ -1,0 +1,21 @@
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px;
+  .news{
+    text-align: justify;
+  }
+  .link {
+    margin-top: 40px;
+
+    .site-info {
+      text-decoration: underline;
+      color: #5f5fe6;
+      cursor: pointer;
+    }
+
+
+  }
+}
