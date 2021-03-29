@@ -27,8 +27,7 @@ export class StateComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
       if (params) {
-        console.log(params); //log the entire params object
-        console.log(params['id']); //log the value of id
+
         this.getStateData(params['id']);
       }
     });
@@ -51,7 +50,6 @@ export class StateComponent implements OnInit, OnDestroy {
           state.dateChecked = this.getDate(state.dateChecked);
           return state;
         });
-        console.log(this.statesData);
         this.stateData = this.statesData.find(st => st.state === selectedId);
 
       }
@@ -65,7 +63,6 @@ export class StateComponent implements OnInit, OnDestroy {
     this.apiService.getStatesInfo().toPromise().then(res => {
       // this.spinner.hide();
       if (res) {
-        console.log(res);
         let statesInfo = res.data.response;
         statesInfo = statesInfo.map(state => {
           state.state = UsStates.find(el => (el.abbreviation === state.state)).name;
@@ -73,7 +70,6 @@ export class StateComponent implements OnInit, OnDestroy {
         });
         this.stateInfo = statesInfo.find(st => st.state === selectedId);
 
-        console.log(this.stateInfo);
 
       }
     }).catch((e) => {

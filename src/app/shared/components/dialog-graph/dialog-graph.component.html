@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>State Charts</h1>
+<ngx-charts-line-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data.usDailyForChart"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel">
+</ngx-charts-line-chart>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

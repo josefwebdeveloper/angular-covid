@@ -24,4 +24,7 @@ export class ApiService {
   getStatesInfo(): Observable<any> {
     return this.http.get(this.baseUrl + 'covid/states/info');
   }
+  getUsDaily(): Observable<any> {
+    return this.http.get(this.baseUrl + 'covid/us/daily');
+  }
 }

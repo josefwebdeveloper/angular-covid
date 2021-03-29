@@ -1,4 +1,12 @@
-<div class="title">Data for {{getDate(null)}}</div>
+<div class="title-container">
+  <div class="title">Data for {{getDate(null)}}
+  </div>
+  <div class="example-button-container">
+    <button (click)="openDialog()" mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+      <mat-icon>trending_up</mat-icon>
+    </button>
+  </div>
+</div>
 <app-country-table [countryData]="countryData"></app-country-table>
 <div class="search">
   <mat-form-field class="example-form-field">

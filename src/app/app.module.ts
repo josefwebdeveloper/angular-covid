@@ -15,12 +15,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { DialogGraphComponent } from './shared/components/dialog-graph/dialog-graph.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {LineChartModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     FooterComponent,
+    DialogGraphComponent,
 
   ],
   imports: [
@@ -35,7 +39,9 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     MatListModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatDialogModule,
+    LineChartModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

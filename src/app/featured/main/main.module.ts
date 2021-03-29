@@ -8,6 +8,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {StateTableComponent} from '../../shared/components/state-table/state-table.component';
 import { StateComponent } from './state/state.component';
 import {FilterPipe} from '../../pipes/filter.pipe';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 
 
@@ -23,7 +24,8 @@ import {FilterPipe} from '../../pipes/filter.pipe';
     CommonModule,
     MainRoutingModule,
     SharedModule,
-    MatSortModule
+    MatSortModule,
+    NgxChartsModule
   ]
 })
 export class MainModule { }

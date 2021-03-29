@@ -12,7 +12,6 @@ export class DataService {
   }
 
   setStatesData(data): void {
-    console.log(data);
     this.statesDataSubject.next(data);
   }
 
